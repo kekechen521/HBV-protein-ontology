@@ -1,0 +1,846 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2012/6/Ontology1342071125359.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/ontologies/2012/6/Ontology1342071125359.owl">
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Dane_particle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#subviral_particles_of_HBV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pre-genome_of_HBV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HBV_genome"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#envelope_of_HBV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spherical_subviral_particle_of_HBV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HBV_infection_process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#infectious_particle_of_HBV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HBV_maturation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HBV_proteins"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#core_particle_of_HBV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#nucleocapsid_of_HBV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tubular_subviral_particle_of_HBV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HBV_structure_component"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#capsid_of_HBV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HBc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HBe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HBsAg"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HBx"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LHBs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MHBs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#P_protein"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SHBs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#formation_of_cccDNA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#viral_entry_process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#secretory_protein"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pre-genome_encapsidation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pre-genome_integration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#function_protein"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#envelope_lipid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#envelope_protein"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#envelope_of_spherical_subviral_particle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#infectious_cycle_of_HBV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#initiation_of_viral_infection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#positive_regulation_of_initiation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#regulation_of_initiation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#negative_regulation_of_initiation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#nucleocapsid_maturation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#viral_nucleocapsid_envelopment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#intracellular_transport_of_virus_in_host_cell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#viral_transcription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#viral_entry_into_host_cell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HBV_reverse_transcription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#release_of_virus_from_host_cell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#viral_attachment_to_host_cell"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#envelope_of_tubular_subviral_particle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#intracellular_amplification_of_cccDNA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#intracellular_replication_cycle_of_HBV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#positive_regulation_of_intracellular_replication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#regulation_of_intracellular_replication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#negative_regulation_of_intracellular_replication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#translation_and_post-processing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#uncoating_of_virus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#capsid_protein"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#regulation_of_HBV_process"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#negatively_regulates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#part_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#participates_in"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#positively_regulates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#regulates"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Dane_particle"/>
+        <Class IRI="#infectious_particle_of_HBV"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#subviral_particles_of_HBV"/>
+        <Class IRI="#HBV_structure_component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pre-genome_of_HBV"/>
+        <Class IRI="#HBV_genome"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBV_genome"/>
+        <Class IRI="#HBV_structure_component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBV_genome"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#nucleocapsid_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#envelope_of_HBV"/>
+        <Class IRI="#HBV_structure_component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#envelope_of_HBV"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#Dane_particle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spherical_subviral_particle_of_HBV"/>
+        <Class IRI="#subviral_particles_of_HBV"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBV_infection_process"/>
+        <Class abbreviatedIRI=":Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#infectious_particle_of_HBV"/>
+        <Class IRI="#HBV_structure_component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBV_maturation"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBV_maturation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#intracellular_replication_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBV_proteins"/>
+        <Class abbreviatedIRI=":Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#core_particle_of_HBV"/>
+        <Class IRI="#HBV_structure_component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#core_particle_of_HBV"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#Dane_particle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#nucleocapsid_of_HBV"/>
+        <Class IRI="#core_particle_of_HBV"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tubular_subviral_particle_of_HBV"/>
+        <Class IRI="#subviral_particles_of_HBV"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBV_structure_component"/>
+        <Class abbreviatedIRI=":Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#capsid_of_HBV"/>
+        <Class IRI="#HBV_structure_component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#capsid_of_HBV"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#nucleocapsid_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBc"/>
+        <Class IRI="#capsid_protein"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBc"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#capsid_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBc"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates_in"/>
+            <Class IRI="#pre-genome_encapsidation"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBc"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates_in"/>
+            <Class IRI="#intracellular_transport_of_virus_in_host_cell"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBe"/>
+        <Class IRI="#secretory_protein"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBe"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates_in"/>
+            <Class IRI="#regulation_of_HBV_process"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBsAg"/>
+        <Class IRI="#envelope_protein"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBx"/>
+        <Class IRI="#function_protein"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBx"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#core_particle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBx"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates_in"/>
+            <Class IRI="#regulation_of_intracellular_replication"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBx"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#regulates"/>
+            <Class IRI="#pre-genome_encapsidation"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBx"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#regulates"/>
+            <Class IRI="#nucleocapsid_maturation"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBx"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#regulates"/>
+            <Class IRI="#viral_transcription"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBx"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#regulates"/>
+            <Class IRI="#HBV_reverse_transcription"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LHBs"/>
+        <Class IRI="#HBsAg"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#envelope_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#envelope_of_tubular_subviral_particle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates_in"/>
+            <Class IRI="#viral_entry_into_host_cell"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates_in"/>
+            <Class IRI="#viral_attachment_to_host_cell"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates_in"/>
+            <Class IRI="#translation_and_post-processing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MHBs"/>
+        <Class IRI="#HBsAg"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#envelope_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#envelope_of_spherical_subviral_particle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#envelope_of_tubular_subviral_particle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates_in"/>
+            <Class IRI="#translation_and_post-processing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#P_protein"/>
+        <Class IRI="#function_protein"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#P_protein"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#HBV_genome"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#P_protein"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates_in"/>
+            <Class IRI="#formation_of_cccDNA"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#P_protein"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates_in"/>
+            <Class IRI="#pre-genome_encapsidation"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#P_protein"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates_in"/>
+            <Class IRI="#HBV_reverse_transcription"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SHBs"/>
+        <Class IRI="#HBsAg"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#envelope_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#envelope_of_spherical_subviral_particle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#envelope_of_tubular_subviral_particle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates_in"/>
+            <Class IRI="#viral_attachment_to_host_cell"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SHBs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates_in"/>
+            <Class IRI="#translation_and_post-processing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#formation_of_cccDNA"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#formation_of_cccDNA"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#infectious_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#viral_entry_process"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#viral_entry_process"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#initiation_of_viral_infection"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#secretory_protein"/>
+        <Class IRI="#HBV_proteins"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pre-genome_encapsidation"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pre-genome_encapsidation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#intracellular_replication_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pre-genome_integration"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pre-genome_integration"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#infectious_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#function_protein"/>
+        <Class IRI="#HBV_proteins"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#envelope_lipid"/>
+        <Class IRI="#HBV_structure_component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#envelope_lipid"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#envelope_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#envelope_lipid"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#envelope_of_spherical_subviral_particle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#envelope_lipid"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#envelope_of_tubular_subviral_particle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#envelope_protein"/>
+        <Class IRI="#HBV_proteins"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#envelope_of_spherical_subviral_particle"/>
+        <Class IRI="#HBV_structure_component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#envelope_of_spherical_subviral_particle"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#spherical_subviral_particle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#infectious_cycle_of_HBV"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#initiation_of_viral_infection"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#initiation_of_viral_infection"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#infectious_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#positive_regulation_of_initiation"/>
+        <Class IRI="#regulation_of_initiation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#positive_regulation_of_initiation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#positively_regulates"/>
+            <Class IRI="#initiation_of_viral_infection"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#regulation_of_initiation"/>
+        <Class IRI="#regulation_of_HBV_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#regulation_of_initiation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#regulates"/>
+            <Class IRI="#initiation_of_viral_infection"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#negative_regulation_of_initiation"/>
+        <Class IRI="#regulation_of_initiation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#negative_regulation_of_initiation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#negatively_regulates"/>
+            <Class IRI="#initiation_of_viral_infection"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#nucleocapsid_maturation"/>
+        <Class IRI="#HBV_maturation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#viral_nucleocapsid_envelopment"/>
+        <Class IRI="#HBV_maturation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#intracellular_transport_of_virus_in_host_cell"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#intracellular_transport_of_virus_in_host_cell"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#infectious_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#viral_transcription"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#viral_transcription"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#intracellular_replication_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#viral_entry_into_host_cell"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#viral_entry_into_host_cell"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#viral_entry_process"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBV_reverse_transcription"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HBV_reverse_transcription"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#intracellular_replication_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#release_of_virus_from_host_cell"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#release_of_virus_from_host_cell"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#infectious_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#viral_attachment_to_host_cell"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#viral_attachment_to_host_cell"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#viral_entry_process"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#envelope_of_tubular_subviral_particle"/>
+        <Class IRI="#HBV_structure_component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#envelope_of_tubular_subviral_particle"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#tubular_subviral_particle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#intracellular_amplification_of_cccDNA"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#intracellular_amplification_of_cccDNA"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#intracellular_replication_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#intracellular_replication_cycle_of_HBV"/>
+        <Class IRI="#infectious_cycle_of_HBV"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#positive_regulation_of_intracellular_replication"/>
+        <Class IRI="#regulation_of_intracellular_replication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#positive_regulation_of_intracellular_replication"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#positively_regulates"/>
+            <Class IRI="#intracellular_replication_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#regulation_of_intracellular_replication"/>
+        <Class IRI="#regulation_of_HBV_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#regulation_of_intracellular_replication"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#regulates"/>
+            <Class IRI="#intracellular_replication_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#negative_regulation_of_intracellular_replication"/>
+        <Class IRI="#regulation_of_intracellular_replication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#negative_regulation_of_intracellular_replication"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#negatively_regulates"/>
+            <Class IRI="#intracellular_replication_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#translation_and_post-processing"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#translation_and_post-processing"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#intracellular_replication_cycle_of_HBV"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#uncoating_of_virus"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#uncoating_of_virus"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#part_of"/>
+            <Class IRI="#initiation_of_viral_infection"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#capsid_protein"/>
+        <Class IRI="#HBV_proteins"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#regulation_of_HBV_process"/>
+        <Class IRI="#HBV_infection_process"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#negatively_regulates"/>
+        <ObjectProperty IRI="#regulates"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#positively_regulates"/>
+        <ObjectProperty IRI="#regulates"/>
+    </SubObjectPropertyOf>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#part_of"/>
+    </TransitiveObjectProperty>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
