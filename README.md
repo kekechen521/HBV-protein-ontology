@@ -99,7 +99,7 @@ pip install -r requirements.txt
 |---|---|
 | `streamlit` | 页面框架 |
 | `pandas` / `numpy` | 数据读取与匹配 |
-| `openpyxl` | 读取 `.xlsx` |
+| `openpyxl` | 读取文献 `.xlsx` |
 | `owlready2` | 本体解析（主解析器） |
 | `rdflib` | 通用 RDF 兜底（`.ttl` / `.rdf` 等） |
 | `pyarrow` | 表格渲染；若本机 DLL 损坏可执行 `pip install --force-reinstall pyarrow` |
