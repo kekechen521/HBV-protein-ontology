@@ -1,0 +1,9 @@
+# 文献检索系统依赖
+# 安装：pip install -r requirements.txt
+streamlit>=1.47          # 需要 width="stretch" 等新 API
+pandas>=2.0
+openpyxl>=3.1            # 读取文献
+owlready2>=0.46          # 本体加载（RDF/XML、OWL/XML、Turtle）
+rdflib>=6.3              # 可选：owlready2 解析失败时的通用 RDF 兜底
+pyarrow>=14              # st.dataframe 需要；若本机 pyarrow 损坏请 --force-reinstall
+numpy>=1.24              # pandas 依赖，显式列出便于排错
