@@ -48,9 +48,8 @@ CN_SHEET: str | int = 0        # 中文库 sheet
 SPLIT_ROW: int = 4659          # A 库 = 第 1 ~ 4659 个数据行
 PER_PAGE: int = 20             # 每页条数
 
-# pyarrow 兼容开关：st.dataframe 依赖 pyarrow，若环境里的 pyarrow 损坏
-# （典型报错：ImportError: DLL load failed while importing lib），
-# 代码会自动退化为 HTML 表格；也可把环境变量 LITSEARCH_NO_ARROW=1 强制走 HTML 表格。
+# pyarrow 兼容开关：st.dataframe依赖pyarrow，若环境里的pyarrow损坏
+# 代码会自动退化为 HTML 表格；也可把环境变量LITSEARCH_NO_ARROW=1变为HTML表格。
 FORCE_HTML_TABLE: bool = os.environ.get("LITSEARCH_NO_ARROW", "").strip().lower() in (
     "1", "true", "yes", "on"
 )
@@ -71,7 +70,7 @@ HBPO_CANDIDATES: list[Path] = [
 ]
 ALLOWED_ONTOLOGY_SUFFIX = {".owl", ".ttl", ".rdf", ".xml", ".n3"}
 
-# 参与检索的注解属性（局部名，小写比较）：首选标签 + 各类同义词。
+# 参与检索的注解属性：首选标签 + 各类同义词。
 # 这样本体里写进 oboInOwl:hasExactSynonym / skos:altLabel 的中文译名也能被搜索到。
 LABEL_PROPERTIES: tuple[str, ...] = ("label", "preflabel", "title")
 SYNONYM_PROPERTIES: tuple[str, ...] = (
@@ -148,7 +147,7 @@ def _clean_year(value) -> str:
 
 def _resolve_columns(df: pd.DataFrame, lib_name: str) -> dict[str, str]:
     """把真实列名映射到系统标准名，返回 {标准名: 真实列名}。
-    id / title 缺失时直接抛错；其余列缺失只告警（用空列兜底）。
+    id / title 缺失时直接抛错；其余列缺失只告警。
     """
     norm_map = {str(c).strip().lower(): c for c in df.columns}
     resolved: dict[str, str] = {}
@@ -246,7 +245,7 @@ def load_library(path_str: str, sheet: str | int, lib_name: str) -> pd.DataFrame
 
 
 def build_libraries() -> dict[str, pd.DataFrame]:
-    """读取两个 Excel 并按 SPLIT_ROW 拆成 A / B / C 三个逻辑库。"""
+    """读取两个文献库并按 SPLIT_ROW 拆成逻辑库。"""
     en = load_library(str(EN_XLSX), EN_SHEET, "英文库")
     cn = load_library(str(CN_XLSX), CN_SHEET, "中文库")
 
@@ -261,7 +260,7 @@ def build_libraries() -> dict[str, pd.DataFrame]:
 
 
 def combine_libraries(libs: dict[str, pd.DataFrame], selected: Iterable[str]) -> pd.DataFrame:
-    """把用户勾选的库纵向合并；index 重置避免重复索引导致 mask 错位。"""
+    """把用户勾选的库纵向合并；index重置避免重复索引导致mask错位。"""
     frames = [libs[name] for name in selected if name in libs]
     if not frames:
         return pd.DataFrame(columns=["id", "title", "author", "keywords", "journal", "year",
@@ -274,7 +273,7 @@ def combine_libraries(libs: dict[str, pd.DataFrame], selected: Iterable[str]) ->
 # ==============================================================================
 
 def keyword_search(df: pd.DataFrame, query: str, include_content: bool = False) -> pd.DataFrame:
-    """关键词检索：空格分隔的多词按 AND 逻辑做子串匹配（不区分大小写）。
+    """关键词检索：空格分隔的多词按AND逻辑做子串匹配（不区分大小写）。
     include_content=False（默认）只匹配 title / keywords；
     include_content=True 时把摘要 content 一并纳入匹配（对应页面上的
     “Include article content (abstract)” 选项）。
@@ -433,11 +432,11 @@ def _local_name(iri: str) -> str:
 
 def _load_with_owlready2(path: Path) -> OntologyIndex:
     """主加载器：owlready2 支持 RDF/XML、OWL/XML、Turtle、NTriples。"""
-    from owlready2 import ThingClass, World  # 延迟导入，缺失时给友好提示
+    from owlready2 import ThingClass, World  #延迟导入，缺失时给友好提示
 
     index = OntologyIndex(name=path.stem, path=str(path), loader="owlready2")
     cwd = os.getcwd()
-    # owlready2 在 Windows 下对 file:// URI 支持不佳，切换到文件目录后按文件名加载
+    #owlready2在Windows下对file:// URI 支持不佳，切换到文件目录后按文件名加载
     os.chdir(str(path.parent))
     try:
         world = World()
@@ -450,7 +449,7 @@ def _load_with_owlready2(path: Path) -> OntologyIndex:
         key = cls.name
         if not key:
             continue
-        # rdfs:label(s) 作为首选术语，同义词（oboInOwl / skos）一并纳入匹配词表
+        # rdfs:label(s) 作为首选术语，同义词一并纳入匹配词表
         labels = [str(lb) for lb in (getattr(cls, "label", []) or [])]
         synonyms: list[str] = []
         for prop in ("prefLabel", "hasExactSynonym", "hasRelatedSynonym", "hasNarrowSynonym",
@@ -471,12 +470,12 @@ def _load_with_owlready2(path: Path) -> OntologyIndex:
         for equiv in getattr(cls, "equivalent_to", []) or []:
             if isinstance(equiv, ThingClass) and equiv in entities:
                 index.add_equivalent(key, entities[equiv])
-        # 个别版本把 owl:sameAs 暴露在 identical_to 上（主要针对个体）
+        # 个别版本把 owl:sameAs 暴露在 identical_to 上
         for same in getattr(cls, "identical_to", []) or []:
             if isinstance(same, ThingClass) and same in entities:
                 index.add_same_as(key, entities[same])
 
-    # owl:sameAs 兜底：直接在 RDF 图上扫描一次（失败则忽略）
+    # owl:sameAs 兜底：直接在 RDF 图上扫描一次
     try:
         from rdflib import URIRef
 
@@ -537,7 +536,7 @@ def _load_with_owlxml(path: Path) -> OntologyIndex:
         elif len(kids) == 1:
             index.add_node(kids[0], kids[0])
 
-    # 3) 等价类 / sameAs
+    # 3) 等价类/sameAs
     for tag, adder in ((f"{OWL}EquivalentClasses", index.add_equivalent),
                        (f"{OWL}SameIndividual", index.add_same_as)):
         for axiom in root.findall(tag):
@@ -546,7 +545,7 @@ def _load_with_owlxml(path: Path) -> OntologyIndex:
             for other in members[1:]:
                 adder(members[0], other)
 
-    # 4) rdfs:label / oboInOwl:hasExactSynonym / skos:altLabel 等注解
+    # 4) rdfs:label/oboInOwl:hasExactSynonym/skos:altLabel等注解
     label_keys = {p.lower() for p in LABEL_PROPERTIES}
     annos: dict[str, dict[str, list[str]]] = {}
     for ann in root.findall(f"{OWL}AnnotationAssertion"):
