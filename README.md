@@ -1,8 +1,8 @@
-# HBPO：乙型肝炎病毒蛋白本体与文献检索系统
+# HBPO：乙型肝炎病毒蛋白本体
 
 **HBPO（HBV Protein Ontology，乙型肝炎病毒蛋白本体）** 是一份面向乙型肝炎病毒（HBV）领域的轻量级 OWL 本体，用于统一描述 HBV 的病毒蛋白、结构组分与感染过程，并可作为语义检索与知识聚类的概念底座。
 
-本仓库同时提供一个基于 Streamlit 的文献检索系统：既可用传统关键词检索，也可加载 HBPO 本体做概念级的语义检索。
+本仓库同时提供一个基于Streamlit的文献检索系统：既可用传统关键词检索，也可加载 HBPO 本体做概念级的语义检索。
 
 ---
 
@@ -10,10 +10,10 @@
 
 | 角色 | 姓名 |
 |---|---|
-| 本体创建 | **chenheng** |
-| 本体优化 | **chenyirong** |
+| 本体创建 | **Chenheng** |
+| 本体优化 | **Chenyirong** |
 
-本体的类名、层级结构与术语体系由 chenheng 建立；chenyirong 在其基础上补充了规范标签（`rdfs:label`）、同义词（`oboInOwl:hasExactSynonym`，含中文译名）与中英文注释（`rdfs:comment`），并完善了检索侧的概念映射与语义扩展逻辑。
+本体的类名、层级结构与术语体系由Chenheng建立；Chenyirong 在其基础上补充了规范标签（`rdfs:label`）、同义词（`oboInOwl:hasExactSynonym`，含中文译名）与中英文注释（`rdfs:comment`），并完善了检索侧的概念映射与语义扩展逻辑。
 
 **联系方式：E-mail: chenheng_dr@163.com**
 
@@ -106,6 +106,10 @@ pip install -r requirements.txt
 | `rdflib` | 通用 RDF 兜底（`.ttl` / `.rdf` 等） |
 | `pyarrow` | 表格渲染；若本机 DLL 损坏可执行 `pip install --force-reinstall pyarrow` |
 
+## 五、Acknowledgment
+本研究得到了温州瓯粤海智计划创新人才项目（No.WZ2023YYCJH0169）、温州大学引进高层次人才科研启动基金（No.QD2021078）和温州大学挑战杯项目的支持。
+This study was supported by Innovation Talent Project of Wenzhou Ou Yue Hai zhi Plan (No.WZ2023OYYCJH0169), the start foundation of Wenzhou University's scientific research for introducing high-level talents (No.QD2021078), and Challenge Cup Project of Wenzhou University.
+
 ## English summary
 
-HBPO (HBV Protein Ontology) is a lightweight OWL ontology describing hepatitis B virus proteins, structural components and infection-process steps. It contains 55 classes in three top-level branches — infection process (27), viral proteins (13) and structural components (15) — annotated with English labels, 323 synonyms (163 of them Chinese) and 110 bilingual comments. The ontology can be used for concept-level knowledge clustering and for ontology-based literature retrieval. It was created by **chenheng** and later refined by **chenyirong**; contact: **chenheng_dr@163.com**.
+HBPO (HBV Protein Ontology) is a lightweight OWL ontology describing hepatitis B virus proteins, structural components and infection-process steps. It contains 55 classes in three top-level branches — infection process (27), viral proteins (13) and structural components (15)— annotated with English labels, 323 synonyms and 110 bilingual comments. The ontology can be used for concept-level knowledge clustering and for ontology-based literature retrieval. It was created by **Chenheng** and later refined by **Chenyirong**; contact: **chenheng_dr@163.com**.
