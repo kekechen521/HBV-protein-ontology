@@ -59,14 +59,14 @@ LIB_A = "A Database"
 LIB_B = "B Database"
 LIB_C = "C Database"
 
-# 本体目录：HBPO 默认放 ontologies/HBPO.owl
+# 本体目录：HBPVO 默认放 ontologies/HBPVO.owl
 ONTOLOGY_DIR: Path = BASE_DIR / "ontologies"
 UPLOAD_DIR: Path = ONTOLOGY_DIR / "uploaded"
-HBPO_CANDIDATES: list[Path] = [
-    ONTOLOGY_DIR / "HBPO.owl",
-    ONTOLOGY_DIR / "HBPO(HBV_protein_ontology).owl",
-    BASE_DIR / "HBPO.owl",
-    BASE_DIR / "HBPO(HBV_protein_ontology).owl",
+HBPVO_CANDIDATES: list[Path] = [
+    ONTOLOGY_DIR / "HBPVO.owl",
+    ONTOLOGY_DIR / "HBPVO(HBV_protein_ontology).owl",
+    BASE_DIR / "HBPVO.owl",
+    BASE_DIR / "HBPVO(HBV_protein_ontology).owl",
 ]
 ALLOWED_ONTOLOGY_SUFFIX = {".owl", ".ttl", ".rdf", ".xml", ".n3"}
 
@@ -644,8 +644,8 @@ def get_ontology_index(path_str: str, mtime: float) -> OntologyIndex:
     return load_ontology(path_str)
 
 
-def find_hbpo() -> Path | None:
-    for p in HBPO_CANDIDATES:
+def find_HBPVO() -> Path | None:
+    for p in HBPVO_CANDIDATES:
         if p.exists():
             return p
     return None
@@ -798,11 +798,11 @@ def init_state() -> None:
 
 
 def register_ontologies() -> None:
-    """Build the ontology registry: default HBPO plus previously uploaded files."""
+    """Build the ontology registry: default HBPVO plus previously uploaded files."""
     registry: dict[str, str] = {}
-    hbpo = find_hbpo()
-    if hbpo is not None:
-        registry["HBPO"] = str(hbpo)
+    hbvpo = find_hbvpo()
+    if hbvpo is not None:
+        registry["HBVPO"] = str(hbvpo)
 
     if UPLOAD_DIR.exists():
         for file in sorted(UPLOAD_DIR.glob("*")):
@@ -1162,15 +1162,15 @@ def main() -> None:
                     options=names,
                     index=default_index,
                     key="ont_choice",
-                    format_func=lambda n: f"{n} (default)" if n == "HBPO" else n,
+                    format_func=lambda n: f"{n} (default)" if n == "HBPVO" else n,
                 )
                 st.session_state["active_ontology"] = choice
             else:
                 choice = None
                 st.selectbox("Select ontology", options=["No ontology available"], index=0, disabled=True)
                 st.warning(
-                    "HBPO ontology not found. Put `HBPO.owl` in any of these locations:\n\n"
-                    + "\n".join(f"- `{p}`" for p in HBPO_CANDIDATES[:2])
+                    "HBPVO ontology not found. Put `HBPVO.owl` in any of these locations:\n\n"
+                    + "\n".join(f"- `{p}`" for p in HBPVO_CANDIDATES[:2])
                     + "\n\nYou can also upload a `.owl` / `.ttl` file below."
                 )
 
