@@ -1,8 +1,8 @@
-# HBPO：乙型肝炎病毒蛋白本体
+# HBVPO：乙型肝炎病毒蛋白本体
 
-**HBPO（HBV Protein Ontology，乙型肝炎病毒蛋白本体）** 是一份面向乙型肝炎病毒（HBV）领域的轻量级 OWL 本体，用于统一描述 HBV 的病毒蛋白、结构组分与感染过程，并可作为语义检索与知识聚类的概念底座。
+**HBPVO（HBV Protein Ontology，乙型肝炎病毒蛋白本体）** 是一份面向乙型肝炎病毒（HBV）领域的轻量级 OWL 本体，用于统一描述 HBV 的病毒蛋白、结构组分与感染过程，并可作为语义检索与知识聚类的概念底座。
 
-本仓库同时提供一个基于Streamlit的文献检索系统：既可用传统关键词检索，也可加载 HBPO 本体做概念级的语义检索。
+本仓库同时提供一个基于Streamlit的文献检索系统：既可用传统关键词检索，也可加载 HBPVO 本体做概念级的语义检索。
 
 ---
 
@@ -23,7 +23,7 @@
 
 ## 一、本体内容
 
-HBPO 采用 OWL/XML 格式，共 **55 个类**，按三个顶层分支组织：
+HBPVO 采用 OWL/XML 格式，共 **55 个类**，按三个顶层分支组织：
 
 | 顶层分支 | 术语数 | 说明 |
 |---|---|---|
@@ -49,7 +49,7 @@ HBPO 采用 OWL/XML 格式，共 **55 个类**，按三个顶层分支组织：
 
 ### 1. 知识聚类
 
-HBPO 提供了一套可直接用于概念级聚合的分类骨架：
+HBPVO 提供了一套可直接用于概念级聚合的分类骨架：
 
 - **按分支归类**：把文献、术语或实验结果归入「感染过程 / 病毒蛋白 / 结构组分」三大分支，形成主题簇。
 - **按层次聚合**：沿 `rdfs:subClassOf` 自顶向下聚合，例如把涉及 `HBc`、`HBsAg`、`P_protein`、`HBx` 的文献统一归到父概念 `HBV protein` 之下，从而得到可解释的多级聚类结果。
@@ -61,7 +61,7 @@ HBPO 提供了一套可直接用于概念级聚合的分类骨架：
 本仓库的应用提供两种检索方式：
 
 - **关键词检索**：空格分隔多词按AND逻辑、不区分大小写，对标题与关键词做子串匹配；可选是否把文章摘要（content）一并纳入匹配。
-- **本体检索**：把输入映射到HBPO概念，沿 `subClassOf` / `equivalentClass` / `sameAs` 做语义扩展，再用扩展出的概念集合匹配文献，并在结果中标注每条文献由哪个概念命中。
+- **本体检索**：把输入映射到HBPVO概念，沿 `subClassOf` / `equivalentClass` / `sameAs` 做语义扩展，再用扩展出的概念集合匹配文献，并在结果中标注每条文献由哪个概念命中。
 
 ---
 
@@ -72,9 +72,9 @@ HBPO 提供了一套可直接用于概念级聚合的分类骨架：
 ├── app.py                              # 主程序（Streamlit 应用）
 ├── requirements.txt                    # 依赖清单
 ├── README.md                           # 本文档
-├── HBPO.owl                            # 本体文件
+├── HBPVO.owl                            # 本体文件
 ├── ontologies/
-│   ├── HBPO.owl                        # 页面默认加载的本体（与上者内容一致）
+│   ├── HBPVO.owl                        # 页面默认加载的本体（与上者内容一致）
 │   ├── _original/                      # 未加注解的原始本体备份
 │   └── uploaded/                       # 页面历史上传的本体副本
 ```
@@ -111,4 +111,4 @@ This study was supported by Innovation Talent Project of Wenzhou Ou Yue Hai zhi 
 
 ## English summary
 
-HBPO (HBV Protein Ontology) is a lightweight OWL ontology describing hepatitis B virus proteins, structural components and infection-process steps. It contains 55 classes in three top-level branches — infection process (27), viral proteins (13) and structural components (15)— annotated with English labels, 323 synonyms and 110 bilingual comments. The ontology can be used for concept-level knowledge clustering and for ontology-based literature retrieval. It was created by **Chenheng** and later refined by **Chenyirong**; contact: **chenheng_dr@163.com**.
+HBPVO (HBV Protein Ontology) is a lightweight OWL ontology describing hepatitis B virus proteins, structural components and infection-process steps. It contains 55 classes in three top-level branches — infection process (27), viral proteins (13) and structural components (15)— annotated with English labels, 323 synonyms and 110 bilingual comments. The ontology can be used for concept-level knowledge clustering and for ontology-based literature retrieval. It was created by **Chenheng** and later refined by **Chenyirong**; contact: **chenheng_dr@163.com**.
